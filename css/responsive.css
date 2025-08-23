@@ -1,53 +1,34 @@
-/* 移动端响应式样式 */
+/*
+ * ===== 柚子衣橱/柠檬衣橱 - 响应式样式文件 =====
+ * 
+ * 文件说明：包含移动端和不同屏幕尺寸的适配样式
+ * 创建时间：2025年
+ * 最后更新：2025年8月
+ * 
+ * 响应式断点设计：
+ * - 768px及以下：平板和小屏幕适配
+ * - 480px及以下：手机屏幕适配
+ * - 360px及以下：超小屏幕适配
+ * - 横屏模式：特殊优化
+ * 
+ * 设计原则：
+ * - 移动优先的响应式设计
+ * - 保持内容可读性和操作便利性
+ * - 优化触摸交互体验
+ * - 确保在所有设备上的视觉一致性
+ */
 
-/* 平板和小屏幕 */
+/* ===== 移动端响应式样式 ===== */
+
+/* 平板和小屏幕适配 (768px及以下) */
 @media (max-width: 768px) {
+    /* 通用容器调整 */
     .container {
         padding: 20px 15px;
         max-width: 100%;
     }
 
-    /* 顶部下载区域 */
-    .top-download-section {
-        padding: 15px 0;
-    }
-
-    .top-download-section .container {
-        padding: 0 10px;
-    }
-
-    .top-download-section h3 {
-        font-size: 1rem;
-        margin-bottom: 0.8rem;
-        padding: 0 10px;
-    }
-
-    .top-download-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 0 10px;
-    }
-
-    .top-download-btn.android {
-        min-width: 220px;
-        max-width: 90%;
-        padding: 14px 30px;
-        font-size: 1rem;
-        order: 1;
-    }
-
-    .top-download-btn.ios {
-        min-width: 180px;
-        max-width: 80%;
-        padding: 10px 25px;
-        font-size: 0.85rem;
-        order: 2;
-        opacity: 0.8;
-        transform: scale(0.9);
-    }
-
-    /* Hero区域 */
+    /* Hero区域适配 */
     .hero {
         padding: 40px 0;
     }
@@ -218,41 +199,14 @@
     }
 }
 
-/* 手机屏幕 */
+/* 手机屏幕适配 (480px及以下) */
 @media (max-width: 480px) {
+    /* 通用容器调整 */
     .container {
         padding: 15px 10px;
     }
 
-    /* 顶部下载区域 */
-    .top-download-section {
-        padding: 12px 0;
-    }
-
-    .top-download-section h3 {
-        font-size: 0.9rem;
-        margin-bottom: 0.6rem;
-        padding: 0 5px;
-    }
-
-    .top-download-btn.android {
-        min-width: 240px;
-        max-width: 95%;
-        padding: 16px 35px;
-        font-size: 1.05rem;
-        font-weight: 700;
-    }
-
-    .top-download-btn.ios {
-        min-width: 160px;
-        max-width: 75%;
-        padding: 8px 20px;
-        font-size: 0.8rem;
-        opacity: 0.7;
-        transform: scale(0.85);
-    }
-
-    /* Hero区域 */
+    /* Hero区域适配 */
     .hero {
         padding: 30px 0;
     }
@@ -411,19 +365,9 @@
     }
 }
 
-/* 超小屏幕 */
+/* 超小屏幕适配 (360px及以下) */
 @media (max-width: 360px) {
-    /* 隐藏iOS按钮 */
-    .top-download-btn.ios {
-        display: none;
-    }
-
-    .top-download-btn.android {
-        min-width: 90%;
-        max-width: 280px;
-    }
-
-    /* 品牌说明区域 */
+    /* 品牌说明区域适配 */
     .brand-title {
         font-size: 1.2rem;
         padding: 0 2px;
@@ -512,10 +456,6 @@
 
     .hero p {
         font-size: 0.95rem;
-    }
-
-    .top-download-section {
-        padding: 10px 0;
     }
 
     .features {

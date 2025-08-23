@@ -1,4 +1,27 @@
-/* 基础样式 */
+/*
+ * ===== 柚子衣橱/柠檬衣橱 - 主样式文件 =====
+ * 
+ * 文件说明：包含网站的主要样式定义
+ * 创建时间：2025年
+ * 最后更新：2025年8月
+ * 
+ * 样式组织结构：
+ * 1. 基础样式重置和通用设置
+ * 2. 全局动画定义
+ * 3. Hero区域样式
+ * 4. 品牌说明区域样式
+ * 5. 数据迁移区域样式
+ * 6. 功能展示区域样式
+ * 7. 下载区域样式
+ * 8. 页脚区域样式
+ * 
+ * 注意事项：
+ * - 响应式样式在 responsive.css 中定义
+ * - 所有颜色使用统一的品牌色彩方案
+ * - 动画效果保持轻量级以确保性能
+ */
+
+/* ===== 基础样式重置和通用设置 ===== */
 * {
     box-sizing: border-box;
 }
@@ -11,113 +34,44 @@ body {
     width: 100%;
 }
 
+/* 通用容器样式 - 限制最大宽度并居中显示 */
 .container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 1200px;  /* 最大宽度限制，保证在大屏幕上的可读性 */
+    margin: 0 auto;     /* 水平居中 */
+    padding: 40px 20px; /* 内边距，为内容提供呼吸空间 */
 }
 
-/* 顶部下载区域 */
-.top-download-section {
-    text-align: center;
-    padding: 20px 0;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    border-bottom: 1px solid #dee2e6;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    width: 100%;
-    overflow: hidden;
+/* ===== 全局动画定义 ===== */
+
+/* 浮动动画 - 用于Hero区域背景装饰 */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }   /* 起始和结束位置 */
+    25% { transform: translateY(-10px) translateX(5px); }      /* 向上向右 */
+    50% { transform: translateY(0px) translateX(-5px); }       /* 回到中间向左 */
+    75% { transform: translateY(10px) translateX(5px); }       /* 向下向右 */
 }
 
-.top-download-section .container {
-    padding: 0 15px;
+/* 弹跳动画 - 用于Hero区域标题图标 */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }     /* 静止状态 */
+    40% { transform: translateY(-10px); }                      /* 向上弹跳 */
+    60% { transform: translateY(-5px); }                       /* 小幅回弹 */
 }
 
-.top-download-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #333;
-    font-weight: 600;
-    word-wrap: break-word;
-}
 
-.top-download-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-/* 顶部下载按钮样式 */
-.top-download-btn {
-    display: inline-block;
-    padding: 12px 25px;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    text-align: center;
-}
-
-.top-download-btn.android {
-    background: linear-gradient(45deg, #4CAF50, #45a049);
-    box-shadow: 0 3px 12px rgba(76, 175, 80, 0.3);
-    min-width: 160px;
-}
-
-.top-download-btn.ios {
-    background: linear-gradient(45deg, #007AFF, #0056CC);
-    box-shadow: 0 3px 12px rgba(0, 122, 255, 0.3);
-    min-width: 120px;
-}
-
-.top-download-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-.top-download-btn:hover::before {
-    left: 100%;
-}
-
-.top-download-btn:hover {
-    transform: translateY(-2px);
-}
-
-.top-download-btn.android:hover {
-    box-shadow: 0 5px 18px rgba(76, 175, 80, 0.4);
-}
-
-.top-download-btn.ios:hover {
-    box-shadow: 0 5px 18px rgba(0, 122, 255, 0.4);
-}
-
-/* Hero区域 */
+/* ===== Hero区域样式 ===== */
 .hero {
-    text-align: center;
-    padding: 60px 0;
-    background: linear-gradient(135deg, #FFE135, #FFA500, #FF6B35);
-    color: white;
     position: relative;
-    overflow: hidden;
     width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #FFE135, #FFA500, #FF6B35);
+    overflow: hidden;
 }
 
+/* Hero区域装饰性背景动画 */
 .hero::before {
     content: '';
     position: absolute;
@@ -129,19 +83,12 @@ body {
     animation: float 20s infinite linear;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px) translateX(0px); }
-    25% { transform: translateY(-10px) translateX(5px); }
-    50% { transform: translateY(0px) translateX(-5px); }
-    75% { transform: translateY(10px) translateX(5px); }
-    100% { transform: translateY(0px) translateX(0px); }
-}
-
+/* Hero区域标题样式 */
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
     position: relative;
     z-index: 1;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     word-wrap: break-word;
 }
@@ -153,27 +100,21 @@ body {
     animation: bounce 2s infinite;
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-
+/* Hero区域描述文字样式 */
 .hero p {
-    font-size: 1.1rem;
-    margin: 0;
     position: relative;
     z-index: 1;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 90%;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     word-wrap: break-word;
-    max-width: 90%;
-    margin: 0 auto;
 }
 
-/* 品牌说明区域 */
+/* ===== 品牌说明区域样式 ===== */
 .brand-explanation-section {
-    background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
     padding: 50px 0;
+    background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
     border-top: 3px solid #9C27B0;
     border-bottom: 3px solid #9C27B0;
 }
@@ -186,11 +127,12 @@ body {
 
 .brand-title {
     font-size: 2rem;
+    font-weight: 700;
     color: #6A1B9A;
     margin-bottom: 2rem;
-    font-weight: 700;
 }
 
+/* 品牌卡片网格布局 */
 .brand-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -198,13 +140,14 @@ body {
     margin: 40px 0;
 }
 
+/* 品牌卡片基础样式 */
 .brand-card {
+    position: relative;
     background: white;
     padding: 30px 25px;
     border-radius: 20px;
     box-shadow: 0 6px 25px rgba(156, 39, 176, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
     overflow: hidden;
 }
 
@@ -213,6 +156,7 @@ body {
     box-shadow: 0 10px 35px rgba(156, 39, 176, 0.25);
 }
 
+/* 品牌卡片特定样式 */
 .brand-card.ios-brand {
     border: 3px solid #FF9800;
 }
@@ -221,17 +165,19 @@ body {
     border: 3px solid #4CAF50;
 }
 
+/* 品牌图标样式 */
 .brand-icon {
+    display: block;
     font-size: 4rem;
     margin-bottom: 1rem;
-    display: block;
 }
 
+/* 品牌卡片文字样式 */
 .brand-card h3 {
     font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #333;
     font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
 }
 
 .brand-card p {
@@ -241,16 +187,17 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* 品牌徽章样式 */
 .brand-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     display: inline-block;
     padding: 6px 15px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
     color: white;
-    position: absolute;
-    top: 15px;
-    right: 15px;
 }
 
 .ios-brand .brand-badge {
@@ -261,6 +208,7 @@ body {
     background: linear-gradient(45deg, #4CAF50, #388E3C);
 }
 
+/* 品牌说明注释框 */
 .brand-note {
     margin-top: 40px;
     padding: 25px;
@@ -276,13 +224,13 @@ body {
     line-height: 1.6;
 }
 
-/* 数据迁移区域 */
+/* ===== 数据迁移区域样式 ===== */
 .migration-section {
-    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    margin: 20px 0;
     padding: 40px 0;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
     border-top: 3px solid #FF9800;
     border-bottom: 3px solid #FF9800;
-    margin: 20px 0;
 }
 
 .migration-content {
@@ -291,20 +239,22 @@ body {
     text-align: center;
 }
 
+/* 迁移区域标题样式 */
 .migration-title {
     font-size: 1.8rem;
+    font-weight: 700;
     color: #E65100;
     margin-bottom: 1rem;
-    font-weight: 700;
 }
 
 .migration-subtitle {
     font-size: 1.1rem;
+    font-weight: 500;
     color: #BF360C;
     margin-bottom: 2rem;
-    font-weight: 500;
 }
 
+/* 迁移步骤网格布局 */
 .migration-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -312,12 +262,13 @@ body {
     margin: 30px 0;
 }
 
+/* 迁移步骤卡片样式 */
 .migration-step {
     background: white;
     padding: 25px 20px;
+    border: 2px solid #FFB74D;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
-    border: 2px solid #FFB74D;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -326,24 +277,26 @@ body {
     box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
 }
 
+/* 步骤编号样式 */
 .step-number {
     display: inline-block;
     width: 35px;
     height: 35px;
+    margin-bottom: 15px;
     background: linear-gradient(45deg, #FF9800, #F57C00);
     color: white;
     border-radius: 50%;
     font-weight: bold;
     font-size: 1.1rem;
     line-height: 35px;
-    margin-bottom: 15px;
 }
 
+/* 步骤文字样式 */
 .step-title {
     font-size: 1.1rem;
+    font-weight: 600;
     color: #E65100;
     margin-bottom: 10px;
-    font-weight: 600;
 }
 
 .step-description {
@@ -352,22 +305,23 @@ body {
     line-height: 1.5;
 }
 
+/* 柚子衣橱下载按钮样式 */
 .yuzu-download-btn {
+    position: relative;
     display: inline-block;
+    min-width: 200px;
+    margin: 20px 10px;
     padding: 15px 35px;
     background: linear-gradient(45deg, #FF9800, #F57C00);
     color: white;
     text-decoration: none;
+    text-align: center;
     border-radius: 30px;
     font-size: 1.1rem;
     font-weight: 700;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
-    position: relative;
+    transition: all 0.3s ease;
     overflow: hidden;
-    margin: 20px 10px;
-    min-width: 200px;
-    text-align: center;
 }
 
 .yuzu-download-btn::before {
@@ -390,7 +344,7 @@ body {
     box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
 }
 
-/* 功能区域 */
+/* ===== 功能展示区域样式 ===== */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -399,34 +353,37 @@ body {
     width: 100%;
 }
 
+/* 功能卡片样式 */
 .feature-card {
-    text-align: center;
-    padding: 25px 20px;
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
     width: 100%;
     max-width: 100%;
+    padding: 25px 20px;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     border-color: #FFE135;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
+/* 功能图标样式 */
 .feature-icon {
+    display: block;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    display: block;
 }
 
+/* 功能卡片文字样式 */
 .feature-card h3 {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
     color: #333;
+    margin-bottom: 1rem;
     word-wrap: break-word;
 }
 
@@ -437,47 +394,50 @@ body {
     word-wrap: break-word;
 }
 
-/* 下载区域 */
+/* ===== 下载区域样式 ===== */
 .download-section {
-    text-align: center;
+    width: 100%;
     padding: 50px 0;
     background: #f8f9fa;
-    width: 100%;
+    text-align: center;
 }
 
 .download-section h2 {
     font-size: 1.8rem;
-    margin-bottom: 2rem;
     color: #333;
+    margin-bottom: 2rem;
     word-wrap: break-word;
 }
 
+/* 下载按钮容器 */
 .download-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
 }
 
+/* 通用下载按钮样式 */
 .download-btn {
+    position: relative;
     display: inline-block;
+    min-width: 150px;
     padding: 15px 35px;
     background: linear-gradient(45deg, #FFE135, #FFA500);
     color: white;
     text-decoration: none;
+    text-align: center;
     border-radius: 30px;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 150px;
-    box-shadow: 0 4px 15px rgba(255, 225, 53, 0.3);
-    position: relative;
-    overflow: hidden;
     white-space: nowrap;
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 225, 53, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
+/* 下载按钮光效动画 */
 .download-btn::before {
     content: '';
     position: absolute;
@@ -498,6 +458,7 @@ body {
     box-shadow: 0 6px 20px rgba(255, 225, 53, 0.4);
 }
 
+/* 安卓版下载按钮特殊样式 */
 .download-btn.android {
     background: linear-gradient(45deg, #4CAF50, #45a049);
     box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
@@ -507,13 +468,13 @@ body {
     box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
-/* 页脚 */
+/* ===== 页脚区域样式 ===== */
 footer {
-    text-align: center;
+    width: 100%;
     padding: 30px 20px;
     background: #333;
     color: #fff;
-    width: 100%;
+    text-align: center;
 }
 
 footer p {
