@@ -1,0 +1,524 @@
+/* 移动端响应式样式 */
+
+/* 平板和小屏幕 */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+        max-width: 100%;
+    }
+
+    /* 顶部下载区域 */
+    .top-download-section {
+        padding: 15px 0;
+    }
+
+    .top-download-section .container {
+        padding: 0 10px;
+    }
+
+    .top-download-section h3 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+        padding: 0 10px;
+    }
+
+    .top-download-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .top-download-btn.android {
+        min-width: 220px;
+        max-width: 90%;
+        padding: 14px 30px;
+        font-size: 1rem;
+        order: 1;
+    }
+
+    .top-download-btn.ios {
+        min-width: 180px;
+        max-width: 80%;
+        padding: 10px 25px;
+        font-size: 0.85rem;
+        order: 2;
+        opacity: 0.8;
+        transform: scale(0.9);
+    }
+
+    /* Hero区域 */
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero .container {
+        padding: 0 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        max-width: 95%;
+        padding: 0 10px;
+    }
+
+    /* 品牌说明区域 */
+    .brand-explanation-section {
+        padding: 40px 0;
+    }
+
+    .brand-explanation-content {
+        padding: 0 15px;
+    }
+
+    .brand-title {
+        font-size: 1.6rem;
+        padding: 0 10px;
+    }
+
+    .brand-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .brand-card {
+        padding: 25px 20px;
+        margin: 0 10px;
+    }
+
+    .brand-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .brand-card p {
+        font-size: 0.95rem;
+    }
+
+    .brand-icon {
+        font-size: 3rem;
+    }
+
+    .brand-note {
+        margin: 30px 10px 0;
+        padding: 20px;
+    }
+
+    .brand-note p {
+        font-size: 0.95rem;
+    }
+
+    /* 数据迁移区域 */
+    .migration-section {
+        padding: 30px 0;
+        margin: 15px 0;
+    }
+
+    .migration-content {
+        padding: 0 15px;
+    }
+
+    .migration-title {
+        font-size: 1.5rem;
+    }
+
+    .migration-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .migration-steps {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .migration-step {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+
+    .yuzu-download-btn {
+        min-width: 220px;
+        max-width: 90%;
+        padding: 14px 30px;
+        font-size: 1rem;
+        margin: 15px 5px;
+        display: block;
+        text-align: center;
+    }
+
+    /* 功能区域 */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 0;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+        margin: 0 10px;
+        max-width: calc(100% - 20px);
+    }
+
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    .feature-icon {
+        font-size: 2.2rem;
+    }
+
+    /* 下载区域 */
+    .download-section {
+        padding: 30px 0;
+    }
+
+    .download-section .container {
+        padding: 0 15px;
+    }
+
+    .download-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0 10px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .download-btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+        min-width: 200px;
+        max-width: 90%;
+    }
+
+    /* 页脚 */
+    footer {
+        padding: 20px 15px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+        padding: 0 10px;
+    }
+}
+
+/* 手机屏幕 */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 10px;
+    }
+
+    /* 顶部下载区域 */
+    .top-download-section {
+        padding: 12px 0;
+    }
+
+    .top-download-section h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        padding: 0 5px;
+    }
+
+    .top-download-btn.android {
+        min-width: 240px;
+        max-width: 95%;
+        padding: 16px 35px;
+        font-size: 1.05rem;
+        font-weight: 700;
+    }
+
+    .top-download-btn.ios {
+        min-width: 160px;
+        max-width: 75%;
+        padding: 8px 20px;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        transform: scale(0.85);
+    }
+
+    /* Hero区域 */
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        padding: 0 5px;
+    }
+
+    /* 品牌说明区域 */
+    .brand-explanation-section {
+        padding: 30px 0;
+    }
+
+    .brand-title {
+        font-size: 1.4rem;
+        padding: 0 5px;
+    }
+
+    .brand-info {
+        margin: 25px 0;
+        gap: 15px;
+    }
+
+    .brand-card {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+
+    .brand-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .brand-card p {
+        font-size: 0.9rem;
+    }
+
+    .brand-icon {
+        font-size: 2.5rem;
+    }
+
+    .brand-badge {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    .brand-note {
+        margin: 25px 5px 0;
+        padding: 18px;
+    }
+
+    .brand-note p {
+        font-size: 0.9rem;
+    }
+
+    /* 数据迁移区域 */
+    .migration-section {
+        padding: 25px 0;
+        margin: 10px 0;
+    }
+
+    .migration-title {
+        font-size: 1.3rem;
+        padding: 0 10px;
+    }
+
+    .migration-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .migration-step {
+        padding: 18px 12px;
+        margin: 0 5px;
+    }
+
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        line-height: 30px;
+    }
+
+    .step-title {
+        font-size: 1rem;
+    }
+
+    .step-description {
+        font-size: 0.85rem;
+    }
+
+    .yuzu-download-btn {
+        min-width: 240px;
+        max-width: 95%;
+        padding: 16px 35px;
+        font-size: 1.05rem;
+        margin: 12px 2px;
+        display: block;
+        text-align: center;
+    }
+
+    /* 功能区域 */
+    .features {
+        padding: 25px 0;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 18px 12px;
+        margin: 0 5px;
+        max-width: calc(100% - 10px);
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+    }
+
+    /* 下载区域 */
+    .download-section {
+        padding: 25px 0;
+    }
+
+    .download-section h2 {
+        font-size: 1.3rem;
+        padding: 0 5px;
+    }
+
+    .download-btn {
+        min-width: 180px;
+        max-width: 95%;
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    /* 页脚 */
+    footer {
+        padding: 15px 10px;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+        padding: 0 5px;
+    }
+}
+
+/* 超小屏幕 */
+@media (max-width: 360px) {
+    /* 隐藏iOS按钮 */
+    .top-download-btn.ios {
+        display: none;
+    }
+
+    .top-download-btn.android {
+        min-width: 90%;
+        max-width: 280px;
+    }
+
+    /* 品牌说明区域 */
+    .brand-title {
+        font-size: 1.2rem;
+        padding: 0 2px;
+    }
+
+    .brand-card {
+        margin: 0;
+        padding: 18px 12px;
+    }
+
+    .brand-card h3 {
+        font-size: 1rem;
+    }
+
+    .brand-card p {
+        font-size: 0.85rem;
+    }
+
+    .brand-icon {
+        font-size: 2.2rem;
+    }
+
+    .brand-note {
+        margin: 20px 0 0;
+        padding: 15px;
+    }
+
+    .brand-note p {
+        font-size: 0.85rem;
+    }
+
+    /* 数据迁移区域 */
+    .migration-title {
+        font-size: 1.2rem;
+        padding: 0 5px;
+    }
+
+    .migration-subtitle {
+        font-size: 0.9rem;
+        padding: 0 5px;
+    }
+
+    .migration-step {
+        margin: 0;
+        padding: 15px 10px;
+    }
+
+    .yuzu-download-btn {
+        min-width: 90%;
+        max-width: 280px;
+        font-size: 1rem;
+        padding: 14px 25px;
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .feature-card {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .download-btn {
+        min-width: 90%;
+        max-width: 260px;
+    }
+}
+
+/* 横屏手机优化 */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        padding: 20px 0;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .top-download-section {
+        padding: 10px 0;
+    }
+
+    .features {
+        padding: 20px 0;
+    }
+}

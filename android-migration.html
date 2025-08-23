@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>安卓版数据迁移指南 - 从柚子衣橱到柠檬衣橱</title>
+    <meta name="description" content="详细的安卓版数据迁移指南，帮助用户将柚子衣橱的数据完整迁移到柠檬衣橱，保留所有衣物和搭配记录。">
+    <meta name="keywords" content="安卓数据迁移,柚子衣橱,柠檬衣橱,数据备份,衣橱数据">
+    <meta name="author" content="柚子衣橱/柠檬衣橱团队">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <!-- CSS文件 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* 专用于迁移页面的样式 */
+        .migration-page-header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .migration-page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .migration-page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .detailed-steps {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .step-detailed {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number-large {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4CAF50, #2E7D32);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        
+        .step-title-large {
+            font-size: 1.5rem;
+            color: #2E7D32;
+            font-weight: 600;
+        }
+        
+        .step-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .step-substeps {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .substep {
+            margin: 10px 0;
+            padding: 10px 15px;
+            background: #F1F8E9;
+            border-radius: 8px;
+            border-left: 3px solid #4CAF50;
+        }
+        
+        .warning-box {
+            background: #FFF3E0;
+            border: 2px solid #FF9800;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .warning-box h3 {
+            color: #E65100;
+            margin-top: 0;
+        }
+        
+        .success-box {
+            background: #E8F5E8;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .success-box h3 {
+            color: #2E7D32;
+            margin-top: 0;
+        }
+        
+        .download-section-android {
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            padding: 40px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .android-download-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #4CAF50, #2E7D32);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .android-download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <div class="migration-page-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← 返回首页</a>
+            <h1>🤖 安卓版数据迁移指南</h1>
+            <p>从柚子衣橱安卓版完整迁移到柠檬衣橱，保留您的所有衣物和搭配记录</p>
+        </div>
+    </div>
+
+    <!-- 详细步骤说明 -->
+    <div class="detailed-steps">
+        <div class="warning-box">
+            <h3>⚠️ 重要提醒</h3>
+            <p><strong>请务必按照以下步骤操作，确保数据安全迁移：</strong></p>
+            <ul>
+                <li>迁移过程中请保持网络连接稳定</li>
+                <li>建议在WiFi环境下进行数据迁移</li>
+                <li>迁移完成前请勿删除原柚子衣橱应用</li>
+                <li>如遇问题请及时联系客服获取帮助</li>
+            </ul>
+        </div>
+
+        <div class="step-detailed">
+            <div class="step-header">
+                <div class="step-number-large">1</div>
+                <div class="step-title-large">备份原柚子衣橱数据</div>
+            </div>
+            <div class="step-content">
+                <p>首先需要从您的安卓设备上的柚子衣橱中导出所有数据：</p>
+                <div class="step-substeps">
+                    <div class="substep">打开安卓版柚子衣橱应用</div>
+                    <div class="substep">进入"设置"或"我的"页面</div>
+                    <div class="substep">找到"数据管理"或"备份与恢复"选项</div>
+                    <div class="substep">点击"导出数据"或"创建备份"</div>
+                    <div class="substep">选择备份位置（建议保存到手机存储或云盘）</div>
+                    <div class="substep">等待备份完成，记住备份文件的保存位置</div>
+                </div>
+                <p><strong>💡 小贴士：</strong>备份文件通常以 .backup 或 .json 格式保存，文件名包含日期信息。</p>
+            </div>
+        </div>
+
+        <div class="step-detailed">
+            <div class="step-header">
+                <div class="step-number-large">2</div>
+                <div class="step-title-large">下载安装柠檬衣橱</div>
+            </div>
+            <div class="step-content">
+                <p>下载并安装最新版本的柠檬衣橱安卓应用：</p>
+                <div class="step-substeps">
+                    <div class="substep">点击下方下载按钮获取柠檬衣橱安装包</div>
+                    <div class="substep">下载完成后点击APK文件进行安装</div>
+                    <div class="substep">如提示"未知来源"，请在设置中允许安装</div>
+                    <div class="substep">安装完成后打开柠檬衣橱应用</div>
+                    <div class="substep">完成基本的账号注册或登录</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section-android">
+            <h3>下载柠檬衣橱安卓版</h3>
+            <a href="https://wwcu.lanzoub.com/i6F2432sm3mb" class="android-download-btn" onclick="showAndroidPassword(); return true;" target="_blank" rel="noopener">
+                🍋 立即下载柠檬衣橱
+            </a>
+            <div id="android-password-tip" style="margin-top: 20px; padding: 15px; background: rgba(76, 175, 80, 0.1); border-radius: 10px; color: #2E7D32; font-size: 0.95rem; display: none; border: 2px solid rgba(76, 175, 80, 0.3);">
+                <strong>📋 提取码：cxmd</strong>
+                <div style="margin-top: 8px; font-size: 0.85rem; opacity: 0.8;">
+                    提取码已自动复制到剪贴板，请在下载页面粘贴使用
+                </div>
+            </div>
+        </div>
+
+        <div class="step-detailed">
+            <div class="step-header">
+                <div class="step-number-large">3</div>
+                <div class="step-title-large">导入备份数据</div>
+            </div>
+            <div class="step-content">
+                <p>将之前备份的数据导入到柠檬衣橱中：</p>
+                <div class="step-substeps">
+                    <div class="substep">在柠檬衣橱中进入"设置"页面</div>
+                    <div class="substep">找到"数据管理"或"备份与恢复"选项</div>
+                    <div class="substep">点击"导入数据"或"恢复备份"</div>
+                    <div class="substep">选择之前保存的备份文件</div>
+                    <div class="substep">确认导入，等待数据恢复完成</div>
+                    <div class="substep">检查衣物、搭配等数据是否正确导入</div>
+                </div>
+                <p><strong>⏰ 注意：</strong>数据导入可能需要几分钟时间，请耐心等待，不要中途退出应用。</p>
+            </div>
+        </div>
+
+        <div class="step-detailed">
+            <div class="step-header">
+                <div class="step-number-large">4</div>
+                <div class="step-title-large">验证数据完整性</div>
+            </div>
+            <div class="step-content">
+                <p>确认所有数据都已成功迁移：</p>
+                <div class="step-substeps">
+                    <div class="substep">检查衣物库中的所有衣物是否完整</div>
+                    <div class="substep">验证搭配记录和收藏的搭配</div>
+                    <div class="substep">确认个人设置和偏好配置</div>
+                    <div class="substep">测试应用的各项功能是否正常</div>
+                    <div class="substep">如发现数据缺失，可重新尝试导入</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-box">
+            <h3>🎉 迁移完成！</h3>
+            <p>恭喜您成功完成数据迁移！现在您可以：</p>
+            <ul>
+                <li>在柠檬衣橱中继续使用所有原有数据</li>
+                <li>体验更稳定的服务和新功能</li>
+                <li>享受持续的应用更新和支持</li>
+                <li>安全删除原柚子衣橱应用（建议保留备份文件）</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>🆘 遇到问题？</h3>
+            <p>如果在迁移过程中遇到任何问题，请：</p>
+            <ul>
+                <li>检查备份文件是否完整且未损坏</li>
+                <li>确保柠檬衣橱应用是最新版本</li>
+                <li>尝试重启应用后重新导入</li>
+                <li>联系我们的客服团队获取专业帮助</li>
+            </ul>
+            <p><strong>客服联系方式：</strong>通过应用内"意见反馈"或"联系客服"功能</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 柚子衣橱/柠檬衣橱 All Rights Reserved</p>
+        <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">鄂ICP备2024051170号</a></p>
+        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.8;">
+            <a href="index.html" style="color: #fff; text-decoration: none;">← 返回首页</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="js/main.js"></script>
+    <script>
+        // 安卓下载页面的提取码复制功能
+        function showAndroidPassword() {
+            const tip = document.getElementById('android-password-tip');
+            if (!tip) return;
+            
+            tip.style.display = 'block';
+            
+            // 添加显示动画
+            tip.style.opacity = '0';
+            tip.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                tip.style.transition = 'all 0.3s ease';
+                tip.style.opacity = '1';
+                tip.style.transform = 'translateY(0)';
+            }, 10);
+
+            // 复制提取码
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText('cxmd').then(() => {
+                    console.log('提取码已复制到剪贴板');
+                }).catch((err) => {
+                    console.error('复制失败:', err);
+                });
+            }
+            
+            // 4秒后自动隐藏提示
+            setTimeout(() => {
+                tip.style.opacity = '0';
+                tip.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    tip.style.display = 'none';
+                }, 300);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
