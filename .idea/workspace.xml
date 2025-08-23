@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50d2e638-acba-4ff0-8868-b88b00b2c4cf" name="Changes" comment="更新隐私政策" />
+    <list default="true" id="50d2e638-acba-4ff0-8868-b88b00b2c4cf" name="Changes" comment="更新用户协议">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1755923968683</updated>
       <workItem from="1755923970016" duration="5376000" />
-      <workItem from="1755972274166" duration="1607000" />
+      <workItem from="1755972274166" duration="1927000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -96,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755973805851</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="更新用户协议">
+      <option name="closed" value="true" />
+      <created>1755974042747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755974042747</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="更新隐私政策" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新隐私政策" />
+    <MESSAGE value="更新用户协议" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新用户协议" />
   </component>
 </project>
