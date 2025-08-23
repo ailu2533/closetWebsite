@@ -126,8 +126,15 @@ function fallbackCopyTextToClipboard(text) {
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // 只处理页面内锚点链接，跳过外部链接和空链接
+            if (!href || href === '#' || href.startsWith('http')) {
+                return;
+            }
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
