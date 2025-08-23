@@ -270,6 +270,9 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .migration-step:hover {
@@ -277,32 +280,126 @@ body {
     box-shadow: 0 6px 20px rgba(255, 152, 0, 0.3);
 }
 
+/* 步骤头部布局 */
+.step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
 /* 步骤编号样式 */
 .step-number {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    margin-bottom: 15px;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(45deg, #FF9800, #F57C00);
     color: white;
     border-radius: 50%;
     font-weight: bold;
-    font-size: 1.1rem;
-    line-height: 35px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+/* 步骤内容区域 */
+.step-content {
+    flex: 1;
+    text-align: left;
 }
 
 /* 步骤文字样式 */
 .step-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #E65100;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .step-description {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #5D4037;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+/* 步骤操作区域 */
+.step-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* 迁移专用下载按钮样式 */
+.migration-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #FF9800, #F57C00);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 3px 12px rgba(255, 152, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.migration-download-btn.lemon-version {
+    background: linear-gradient(45deg, #4CAF50, #388E3C);
+    box-shadow: 0 3px 12px rgba(76, 175, 80, 0.3);
+}
+
+.migration-download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(255, 152, 0, 0.4);
+}
+
+.migration-download-btn.lemon-version:hover {
+    box-shadow: 0 5px 18px rgba(76, 175, 80, 0.4);
+}
+
+/* 按钮内部元素样式 */
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+.btn-text {
+    font-weight: 600;
+}
+
+.btn-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.migration-download-btn:hover .btn-arrow {
+    transform: translateX(3px);
+}
+
+/* 步骤提示样式 */
+.step-tip {
+    padding: 8px 16px;
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #F57C00;
+    font-weight: 500;
+}
+
+/* 步骤成功提示样式 */
+.step-success {
+    padding: 8px 16px;
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #388E3C;
+    font-weight: 600;
 }
 
 /* 柚子衣橱下载按钮样式 */
