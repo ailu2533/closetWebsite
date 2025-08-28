@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50d2e638-acba-4ff0-8868-b88b00b2c4cf" name="Changes" comment="更新使用说明">
+    <list default="true" id="50d2e638-acba-4ff0-8868-b88b00b2c4cf" name="Changes" comment="更新隐私协议">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/privacy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/terms.html" beforeDir="false" afterPath="$PROJECT_DIR$/terms.html" afterDir="false" />
@@ -68,7 +68,7 @@
       <workItem from="1755923970016" duration="5376000" />
       <workItem from="1755972274166" duration="9011000" />
       <workItem from="1756175615484" duration="4193000" />
-      <workItem from="1756350839951" duration="4138000" />
+      <workItem from="1756350839951" duration="4514000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -126,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755974585395</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="更新隐私协议">
+      <option name="closed" value="true" />
+      <created>1756355427742</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756355427742</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +145,7 @@
     <MESSAGE value="更新隐私政策" />
     <MESSAGE value="更新用户协议" />
     <MESSAGE value="更新使用说明" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新使用说明" />
+    <MESSAGE value="更新隐私协议" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新隐私协议" />
   </component>
 </project>
