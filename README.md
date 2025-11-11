@@ -2,6 +2,33 @@
 
 这是柠檬衣橱app的静态官方网站，采用模块化设计，优化了移动端体验。
 
+## 🌐 在线访问
+
+网站已部署到GitHub Pages，可通过以下链接访问：
+
+**官方网站：** https://ailu2533.github.io/closetWebsite
+
+## 🚀 快速开始
+
+### 本地开发
+```bash
+# 克隆仓库
+git clone https://github.com/ailu2533/closetWebsite.git
+
+# 进入项目目录
+cd closetWebsite
+
+# 启动本地服务器
+npm run dev
+# 或者
+python -m http.server 8000
+
+# 在浏览器中访问 http://localhost:8000
+```
+
+### 自动部署
+项目配置了GitHub Actions自动部署，每次推送到main分支时会自动部署到GitHub Pages。
+
 ## 项目结构
 
 ```
@@ -111,12 +138,18 @@ closetWebsite/
 
 这是一个纯静态网站，可以直接部署到任何静态托管服务：
 
-- GitHub Pages
+- **GitHub Pages** ✅ (当前使用)
 - Netlify
 - Vercel
 - 阿里云OSS
 - 腾讯云COS
 
+#### GitHub Pages 部署步骤
+1. 将代码推送到GitHub仓库的main分支
+2. GitHub Actions会自动构建和部署
+3. 访问 https://ailu2533.github.io/closetWebsite
+
+#### 手动部署到其他平台
 只需上传所有文件到服务器根目录即可。
 
 ## 更新日志

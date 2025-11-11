@@ -1,10 +1,31 @@
 {
   "name": "closetWebsite",
   "version": "1.0.0",
-  "description": "",
+  "description": "柠檬衣橱/柚子衣橱官方网站 - 智能衣橱管理助手",
   "main": "index.js",
+  "homepage": "https://ailu2533.github.io/closetWebsite",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ailu2533/closetWebsite.git"
+  },
   "scripts": {
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "preview": "python -m http.server 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "keywords": [
+    "衣橱管理",
+    "智能穿搭",
+    "AI搭配", 
+    "衣物分类",
+    "时尚助手",
+    "柚子衣橱",
+    "柠檬衣橱",
+    "静态网站",
+    "github-pages"
+  ],
+  "author": "柚子衣橱/柠檬衣橱团队",
+  "license": "MIT",
+  "private": false
 }

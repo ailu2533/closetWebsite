@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="50d2e638-acba-4ff0-8868-b88b00b2c4cf" name="Changes" comment="更新隐私协议">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/links-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/links-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/privacy.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
       <workItem from="1755972274166" duration="9011000" />
       <workItem from="1756175615484" duration="4193000" />
       <workItem from="1756350839951" duration="7382000" />
-      <workItem from="1756374190054" duration="82000" />
+      <workItem from="1756374190054" duration="562000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -143,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756355759034</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="更新隐私协议">
+      <option name="closed" value="true" />
+      <created>1756374284382</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1756374284382</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
