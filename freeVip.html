@@ -55,452 +55,65 @@
     <link rel="stylesheet" href="css/responsive.css?v=2.0"/>
 
     <style>
-        /* ===== 保留当前实际使用的样式 (精简后) ===== */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #333;
-            margin: 50px 0 30px;
-            position: relative;
-            padding-bottom: 15px;
+        /* 紧凑版样式，仅保留当前页面实际使用结构 */
+        .section-title { text-align:center; font-size:1.75rem; color:#333; margin:40px 0 20px; position:relative; padding-bottom:8px; }
+        .section-title::after { content:""; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:48px; height:3px; background:linear-gradient(90deg,#667eea,#764ba2); border-radius:2px; }
+
+        .highlight-box { background:linear-gradient(135deg,#fff5e6,#ffe6f0); border-left:4px solid #667eea; padding:18px 16px; border-radius:10px; margin:24px 0 20px; }
+        .highlight-box h3 { margin:0 0 8px; font-size:1.2rem; color:#667eea; }
+        .highlight-box p { margin:0; font-size:0.95rem; line-height:1.55; color:#555; }
+
+        .base-requirements { background:linear-gradient(135deg,#f5f7fa,#e8eef7); border-left:4px solid #667eea; padding:14px 14px 12px; border-radius:10px; margin:22px 0 18px; }
+        .base-requirements h4 { margin:0 0 8px; font-size:0.95rem; color:#667eea; }
+        .base-requirements ul { list-style:none; padding:0; margin:0; }
+        .base-requirements li { position:relative; padding:4px 0 4px 20px; font-size:0.8rem; line-height:1.45; color:#555; }
+        .base-requirements li::before { content:"✓"; position:absolute; left:0; color:#667eea; font-weight:600; }
+
+        .vip-tiers { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:18px 0 8px; }
+        .vip-tier-card { background:#fff; border-radius:10px; padding:14px 12px; box-shadow:0 1px 6px rgba(0,0,0,.06); text-align:center; }
+        .vip-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.65rem; font-weight:600; margin-bottom:6px; }
+        .vip-tier-card.bronze .vip-badge { background:#cd7f32; color:#fff; }
+        .vip-tier-card.silver .vip-badge { background:#c0c0c0; color:#333; }
+        .vip-tier-card.gold .vip-badge { background:#ffd700; color:#fff; }
+        .vip-tier-card h3 { font-size:1.25rem; margin:4px 0 2px; color:#333; }
+        .vip-tier-card p { margin:2px 0 0; font-size:0.8rem; color:#555; line-height:1.4; }
+
+        .sample-copy-section { background:#f8f9fa; padding:20px 16px; border-radius:10px; margin:26px 0 18px; }
+        .copy-tips-guide { background:linear-gradient(135deg,#f5f7fa,#e8eef7); padding:20px 16px; border-radius:10px; margin:0; }
+        .guide-intro { font-size:0.85rem; margin:8px 0 16px; color:#555; line-height:1.5; }
+        .tips-category { background:#fff; padding:14px 12px; border-radius:8px; margin-bottom:14px; border-left:4px solid #667eea; }
+        .tips-category h3 { margin:0 0 4px; font-size:0.95rem; color:#333; }
+        .category-desc { margin:0 0 8px; font-size:0.75rem; color:#666; font-style:italic; }
+        .tips-category ul { list-style:none; padding:0; margin:0; }
+        .tips-category li { position:relative; padding:4px 0 4px 18px; font-size:0.78rem; line-height:1.45; color:#555; }
+        .tips-category li::before { content:"→"; position:absolute; left:0; color:#667eea; font-weight:600; }
+
+        /* 平板 */
+        @media (max-width:768px){
+            .section-title{ font-size:1.5rem; margin:34px 0 18px; }
+            .vip-tiers{ grid-template-columns:1fr 1fr; }
         }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .vip-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .vip-tier-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .vip-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-        }
-
-        .vip-tier-card.bronze .vip-badge {
-            background: #cd7f32;
-            color: white;
-        }
-
-        .vip-tier-card.silver .vip-badge {
-            background: #c0c0c0;
-            color: #333;
-        }
-
-        .vip-tier-card.gold .vip-badge {
-            background: #ffd700;
-            color: white;
-        }
-
-        .vip-tier-card h3 { font-size: 1.6rem; color:#333; margin:8px 0 6px; }
-        .vip-tier-card .duration { font-size:0.95rem; color:#666; margin-bottom:0; font-weight:500; }
-
-        .base-requirements {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
-            border-left: 5px solid #667eea;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-        .base-requirements li::before {
-            content: "✓";
-        .sample-copy-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .sample-copy-card h3 {
-            font-size: 1.1rem;
-            color: #667eea;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-        }
-
-        .copy-example {
-            background: #f8f9fa;
-            padding: 15px;
-            padding: 8px 0 8px 28px;
-            position: relative;
-            color: #555;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .copy-tips li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: 700;
-        }
-
-        /* 文案创作指南 */
-        .copy-tips-guide {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-
-        .guide-intro {
-            font-size: 1rem;
-            color: #555;
-            margin: 15px 0 25px 0;
-            line-height: 1.6;
-        }
-        /* 平板简化 */
-        @media (max-width: 768px) {
-            .section-title { font-size:1.6rem; }
-            .vip-tiers { grid-template-columns:1fr; gap:24px; }
-        }
-            align-items: center;
-        /* 手机优化 */
-            font-size: 1.5rem;
-            color: #666;
-            line-height: 1.7;
-            text-align: center;
-        }
-
-        /* VIP特权列表 */
-            .vip-tiers { grid-template-columns:1fr; gap:16px; margin:20px 0; }
-            .vip-tier-card { padding:16px; }
-            .vip-tier-card h3 { font-size:1.4rem; margin:6px 0 4px; }
-            .vip-badge { padding:3px 10px; font-size:0.7rem; margin-bottom:8px; }
-            .base-requirements { padding:16px; margin:24px 0; }
-            .base-requirements h4 { font-size:0.95rem; margin-bottom:10px; }
-            .base-requirements li { padding:6px 0 6px 22px; font-size:0.85rem; }
-            .sample-copy-section { padding:22px; margin:30px 0; }
-            .copy-tips-guide { padding:22px; margin:30px 0; }
-            .guide-intro { font-size:0.95rem; margin:12px 0 18px; }
-            .tips-category { padding:16px; margin-bottom:16px; }
-            .tips-category h3 { font-size:1rem; }
-            .tips-category li { padding:6px 0 6px 24px; font-size:0.9rem; line-height:1.5; }
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .terms-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .terms-section li {
-            padding: 12px 0 12px 30px;
-            position: relative;
-            color: #555;
-            line-height: 1.7;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .terms-section li:last-child {
-            border-bottom: none;
-        }
-
-        .terms-section li::before {
-            content: "•";
-            position: absolute;
-            left: 10px;
-            color: #667eea;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        /* 联系支持 */
-        .contact-section {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, #e0e7ff, #f0e7ff);
-            border-radius: 15px;
-            margin: 40px 0;
-        }
-
-        .contact-section h3 {
-            color: #667eea;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .contact-section p {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .contact-section a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-
-        /* 响应式设计 - 平板 */
-        @media (max-width: 768px) {
-            .vip-hero h1 {
-                font-size: 2rem;
-            }
-
-            .vip-hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .vip-tiers {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .steps-container {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .platform-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .platform-btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-
-            .cta-button {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        /* 响应式设计 - 手机 */
-        @media (max-width: 480px) {
-            .vip-hero {
-                padding: 40px 0;
-            }
-
-            .vip-hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .vip-hero p {
-                font-size: 0.95rem;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-                margin: 28px 0 18px;
-                letter-spacing: 0.2px;
-            }
-
-            .vip-tier-card {
-                padding: 22px 18px;
-            }
-
-            .vip-tier-card h3 {
-                font-size: 1.25rem;
-                margin-bottom: 10px;
-            }
-
-            .step-card {
-                padding: 20px;
-                padding-top: 55px;
-            }
-
-            .step-number {
-                width: 45px;
-                height: 45px;
-                font-size: 1.3rem;
-            }
-
-            .cta-section {
-                padding: 35px 20px;
-            }
-
-            .cta-section h2 {
-                font-size: 1.6rem;
-            }
-
-            .terms-section {
-                padding: 25px 20px;
-            }
-
-            .contact-section {
-                padding: 30px 20px;
-            }
-
-            /* VIP会员 - 移动端优化 */
-            .base-requirements {
-                padding: 14px;
-                margin: 20px 0;
-            }
-
-            .base-requirements h4 {
-                font-size: 0.95rem;
-                margin-bottom: 10px;
-            }
-
-            .base-requirements li {
-                padding: 5px 0 5px 22px;
-                font-size: 0.88rem;
-            }
-
-            .vip-tiers {
-                grid-template-columns: 1fr;
-                gap: 14px;
-                margin: 20px 0;
-            }
-
-            .vip-tier-card {
-                padding: 16px;
-            }
-
-            .vip-tier-card h3 {
-                font-size: 1.4rem;
-                margin: 6px 0 4px;
-            }
-
-            .vip-tier-card .duration {
-                font-size: 0.9rem;
-            }
-
-            .vip-badge {
-                padding: 3px 10px;
-                font-size: 0.7rem;
-                margin-bottom: 8px;
-            }
-
-            .engagement-requirement {
-                margin-top: 10px;
-                padding-top: 10px;
-            }
-
-            .engagement-number {
-                font-size: 1.8rem;
-            }
-
-            .engagement-label {
-                font-size: 0.8rem;
-            }
-
-            .benefit-item {
-                gap: 12px;
-                padding: 16px;
-            }
-
-            .benefit-icon {
-                font-size: 1.6rem;
-            }
-
-            /* 示例文案 - 移动端优化 */
-            .sample-copy-section {
-                padding: 20px;
-                margin: 30px 0;
-            }
-
-            .sample-copy-container {
-                grid-template-columns: 1fr;
-                gap: 16px;
-                margin: 20px 0;
-            }
-
-            .sample-copy-card {
-                padding: 16px;
-            }
-
-            .sample-copy-card h3 {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-
-            .copy-example {
-                padding: 12px;
-                font-size: 0.85rem;
-                line-height: 1.6;
-            }
-
-            .copy-tips {
-                padding: 16px;
-                margin-top: 16px;
-            }
-
-            .copy-tips h4 {
-                font-size: 0.95rem;
-                margin-bottom: 12px;
-            }
-
-            .copy-tips li {
-                padding: 6px 0 6px 24px;
-                font-size: 0.9rem;
-            }
-
-            /* 文案创作指南 - 移动端优化 */
-            .copy-tips-guide {
-                padding: 20px;
-                margin: 30px 0;
-            }
-
-            .guide-intro {
-                font-size: 0.95rem;
-                margin: 12px 0 18px 0;
-            }
-
-            .tips-category {
-                padding: 16px;
-                margin-bottom: 16px;
-            }
-
-            .tips-category h3 {
-                font-size: 1rem;
-                margin-bottom: 6px;
-            }
-
-            .category-desc {
-                font-size: 0.85rem;
-                margin-bottom: 10px;
-            }
-
-            .tips-category li {
-                padding: 6px 0 6px 24px;
-                font-size: 0.9rem;
-                line-height: 1.6;
-            }
+        /* 手机 */
+        @media (max-width:480px){
+            .section-title{ font-size:1.2rem; margin:24px 0 14px; padding-bottom:6px; }
+            .section-title::after{ width:40px; height:3px; }
+            .highlight-box{ padding:14px 12px; margin:18px 0 14px; }
+            .highlight-box h3{ font-size:1.05rem; margin-bottom:6px; }
+            .highlight-box p{ font-size:0.78rem; line-height:1.45; }
+            .base-requirements{ padding:12px 12px 10px; margin:16px 0 12px; }
+            .base-requirements h4{ font-size:0.85rem; margin-bottom:6px; }
+            .base-requirements li{ font-size:0.72rem; padding:3px 0 3px 18px; }
+            .vip-tiers{ grid-template-columns:1fr; gap:12px; margin:14px 0 6px; }
+            .vip-tier-card{ padding:12px 10px; }
+            .vip-badge{ font-size:0.6rem; padding:2px 6px; margin-bottom:4px; }
+            .vip-tier-card h3{ font-size:1.1rem; margin:2px 0; }
+            .vip-tier-card p{ font-size:0.72rem; }
+            .sample-copy-section{ padding:16px 12px; margin:20px 0 14px; }
+            .copy-tips-guide{ padding:16px 12px; }
+            .guide-intro{ font-size:0.75rem; margin:6px 0 12px; }
+            .tips-category{ padding:12px 10px; margin-bottom:12px; }
+            .tips-category h3{ font-size:0.85rem; }
+            .tips-category li{ font-size:0.72rem; padding:3px 0 3px 16px; }
         }
     </style>
 </head>
