@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 基础页面设置 -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>免费领取VIP会员 - 柚子衣橱/柠檬衣橱</title>
+
+    <!-- SEO元数据 -->
+    <meta
+            name="description"
+            content="分享即可免费获得VIP会员！在小红书或抖音发布内容，即可获得月会员、年会员甚至永久会员。立即参与，解锁全部高级功能！"
+    />
+    <meta
+            name="keywords"
+            content="免费VIP,会员赠送,柚子衣橱,柠檬衣橱,小红书,抖音,推广活动"
+    />
+    <meta name="author" content="柚子衣橱/柠檬衣橱团队"/>
+
+    <!-- 社交媒体分享 - Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta
+            property="og:url"
+            content="https://ailu2533.github.io/closetWebsite/freeVip"
+    />
+    <meta property="og:title" content="免费领取VIP会员 - 柚子衣橱/柠檬衣橱"/>
+    <meta
+            property="og:description"
+            content="分享即可免费获得VIP会员！在小红书或抖音发布内容，即可获得月会员、年会员甚至永久会员。"
+    />
+
+    <!-- 社交媒体分享 - Twitter -->
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta
+            property="twitter:title"
+            content="免费领取VIP会员 - 柚子衣橱/柠檬衣橱"
+    />
+    <meta
+            property="twitter:description"
+            content="分享即可免费获得VIP会员！在小红书或抖音发布内容，即可获得月会员、年会员甚至永久会员。"
+    />
+
+    <!-- 网站图标 -->
+    <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>"
+    />
+
+    <!-- 外部样式表引用 -->
+    <link rel="stylesheet" href="css/styles.css?v=2.0"/>
+    <link rel="stylesheet" href="css/responsive.css?v=2.0"/>
+
+    <style>
+        /* ===== 保留当前实际使用的样式 (精简后) ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin: 50px 0 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .vip-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .vip-tier-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .vip-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .vip-tier-card.bronze .vip-badge {
+            background: #cd7f32;
+            color: white;
+        }
+
+        .vip-tier-card.silver .vip-badge {
+            background: #c0c0c0;
+            color: #333;
+        }
+
+        .vip-tier-card.gold .vip-badge {
+            background: #ffd700;
+            color: white;
+        }
+
+        .vip-tier-card h3 { font-size: 1.6rem; color:#333; margin:8px 0 6px; }
+        .vip-tier-card .duration { font-size:0.95rem; color:#666; margin-bottom:0; font-weight:500; }
+
+        .base-requirements {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .base-requirements li::before {
+            content: "✓";
+        .sample-copy-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .sample-copy-card h3 {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .copy-example {
+            background: #f8f9fa;
+            padding: 15px;
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .copy-tips li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        /* 文案创作指南 */
+        .copy-tips-guide {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef7 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .guide-intro {
+            font-size: 1rem;
+            color: #555;
+            margin: 15px 0 25px 0;
+            line-height: 1.6;
+        }
+        /* 平板简化 */
+        @media (max-width: 768px) {
+            .section-title { font-size:1.6rem; }
+            .vip-tiers { grid-template-columns:1fr; gap:24px; }
+        }
+            align-items: center;
+        /* 手机优化 */
+            font-size: 1.5rem;
+            color: #666;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* VIP特权列表 */
+            .vip-tiers { grid-template-columns:1fr; gap:16px; margin:20px 0; }
+            .vip-tier-card { padding:16px; }
+            .vip-tier-card h3 { font-size:1.4rem; margin:6px 0 4px; }
+            .vip-badge { padding:3px 10px; font-size:0.7rem; margin-bottom:8px; }
+            .base-requirements { padding:16px; margin:24px 0; }
+            .base-requirements h4 { font-size:0.95rem; margin-bottom:10px; }
+            .base-requirements li { padding:6px 0 6px 22px; font-size:0.85rem; }
+            .sample-copy-section { padding:22px; margin:30px 0; }
+            .copy-tips-guide { padding:22px; margin:30px 0; }
+            .guide-intro { font-size:0.95rem; margin:12px 0 18px; }
+            .tips-category { padding:16px; margin-bottom:16px; }
+            .tips-category h3 { font-size:1rem; }
+            .tips-category li { padding:6px 0 6px 24px; font-size:0.9rem; line-height:1.5; }
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .terms-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .terms-section li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            color: #555;
+            line-height: 1.7;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .terms-section li:last-child {
+            border-bottom: none;
+        }
+
+        .terms-section li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* 联系支持 */
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #e0e7ff, #f0e7ff);
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .contact-section h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .contact-section a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式设计 - 平板 */
+        @media (max-width: 768px) {
+            .vip-hero h1 {
+                font-size: 2rem;
+            }
+
+            .vip-hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .vip-tiers {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .platform-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .platform-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* 响应式设计 - 手机 */
+        @media (max-width: 480px) {
+            .vip-hero {
+                padding: 40px 0;
+            }
+
+            .vip-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .vip-hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                margin: 28px 0 18px;
+                letter-spacing: 0.2px;
+            }
+
+            .vip-tier-card {
+                padding: 22px 18px;
+            }
+
+            .vip-tier-card h3 {
+                font-size: 1.25rem;
+                margin-bottom: 10px;
+            }
+
+            .step-card {
+                padding: 20px;
+                padding-top: 55px;
+            }
+
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .cta-section {
+                padding: 35px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .terms-section {
+                padding: 25px 20px;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
+
+            /* VIP会员 - 移动端优化 */
+            .base-requirements {
+                padding: 14px;
+                margin: 20px 0;
+            }
+
+            .base-requirements h4 {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+
+            .base-requirements li {
+                padding: 5px 0 5px 22px;
+                font-size: 0.88rem;
+            }
+
+            .vip-tiers {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin: 20px 0;
+            }
+
+            .vip-tier-card {
+                padding: 16px;
+            }
+
+            .vip-tier-card h3 {
+                font-size: 1.4rem;
+                margin: 6px 0 4px;
+            }
+
+            .vip-tier-card .duration {
+                font-size: 0.9rem;
+            }
+
+            .vip-badge {
+                padding: 3px 10px;
+                font-size: 0.7rem;
+                margin-bottom: 8px;
+            }
+
+            .engagement-requirement {
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+
+            .engagement-number {
+                font-size: 1.8rem;
+            }
+
+            .engagement-label {
+                font-size: 0.8rem;
+            }
+
+            .benefit-item {
+                gap: 12px;
+                padding: 16px;
+            }
+
+            .benefit-icon {
+                font-size: 1.6rem;
+            }
+
+            /* 示例文案 - 移动端优化 */
+            .sample-copy-section {
+                padding: 20px;
+                margin: 30px 0;
+            }
+
+            .sample-copy-container {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin: 20px 0;
+            }
+
+            .sample-copy-card {
+                padding: 16px;
+            }
+
+            .sample-copy-card h3 {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .copy-example {
+                padding: 12px;
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+
+            .copy-tips {
+                padding: 16px;
+                margin-top: 16px;
+            }
+
+            .copy-tips h4 {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+
+            .copy-tips li {
+                padding: 6px 0 6px 24px;
+                font-size: 0.9rem;
+            }
+
+            /* 文案创作指南 - 移动端优化 */
+            .copy-tips-guide {
+                padding: 20px;
+                margin: 30px 0;
+            }
+
+            .guide-intro {
+                font-size: 0.95rem;
+                margin: 12px 0 18px 0;
+            }
+
+            .tips-category {
+                padding: 16px;
+                margin-bottom: 16px;
+            }
+
+            .tips-category h3 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .category-desc {
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+            }
+
+            .tips-category li {
+                padding: 6px 0 6px 24px;
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- ===== 页面主体内容开始 ===== -->
+
+<!-- 主要内容区域 -->
+<div class="container">
+    <!-- 活动说明 -->
+    <div class="highlight-box">
+        <h3>🎉 活动说明</h3>
+        <p>
+            为了感谢广大用户的支持，我们推出<strong>免费VIP会员赠送活动</strong>！只需在小红书或抖音平台分享您使用柚子衣橱的体验，
+            根据分享内容的阅读量，即可获得不同等级的会员！
+        </p>
+    </div>
+
+    <!-- 基础要求说明 -->
+    <div class="base-requirements">
+        <h4>要求：</h4>
+        <ul>
+            <li>在小红书或抖音发布应用相关内容</li>
+            <li>包含应用使用截图</li>
+            <li>添加指定话题标签：#柚子衣橱 #电子衣橱</li>
+            <li>帖子需要保留30天</li>
+        </ul>
+    </div>
+
+    <div class="vip-tiers">
+        <!-- 月会员 -->
+        <div class="vip-tier-card bronze">
+            <span class="vip-badge">月会员</span>
+            <p>阅读量超过600</p>
+        </div>
+
+        <!-- 年会员 -->
+        <div class="vip-tier-card silver">
+            <span class="vip-badge">年会员</span>
+            <p>阅读量超过1000</p>
+        </div>
+
+        <!-- 永久会员 -->
+        <div class="vip-tier-card gold">
+            <span class="vip-badge">永久会员</span>
+            <p>阅读量超2000</p>
+        </div>
+    </div>
+
+    <!-- 示例文案区域 -->
+    <div class="sample-copy-section">
+
+        <div class="copy-tips-guide">
+            <h2 class="section-title">💡 文案创作指南</h2>
+            <p class="guide-intro">从以下两个方面创作，让您的分享更有说服力：</p>
+
+            <!-- 电子衣橱的好处 -->
+            <div class="tips-category">
+                <h3>📌 电子衣橱的好处</h3>
+                <p class="category-desc">突出电子衣橱管理的优势：</p>
+                <ul>
+                    <li>避免重复购买衣服，节省购物成本</li>
+                    <li>创建搭配，方便之后参考，告别"没衣服穿"</li>
+                    <li>有多少衣服一目了然，清晰掌握衣橱库存</li>
+                    <li>记录每天穿搭，建立个人风格库</li>
+                    <li>快速找到衣服，不用翻箱倒柜</li>
+                    <li>发现衣服搭配的新可能，提升穿搭品味</li>
+                </ul>
+            </div>
+
+            <!-- 柚子衣橱的核心功能 -->
+            <div class="tips-category">
+                <h3>🌟 柚子衣橱的核心功能</h3>
+                <p class="category-desc">突出app的独特优化和创新：</p>
+                <ul>
+                    <li>🖼️ 一次能添加30件衣服，自动抠图功能省时省力</li>
+                    <li>💰 把衣服添加到日历后，自动计算穿着成本</li>
+                    <li>📊 衣橱数据统计，了解衣服穿着频率和成本</li>
+                    <li>🔍 快速搜索功能，轻松找到想要的衣服</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<!-- 页脚区域 - 版权信息和备案号 -->
+<footer>
+    <p>© 2025 柚子衣橱/柠檬衣橱 All Rights Reserved</p>
+    <p>
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"
+        >鄂ICP备2024051170号</a
+        >
+    </p>
+    <p style="margin-top: 10px">
+        <a
+                href="guide.html"
+                style="color: #666; text-decoration: none; margin-right: 20px"
+        >使用说明</a
+        >
+        <a
+                href="privacy.html"
+                style="color: #666; text-decoration: none; margin-right: 20px"
+        >隐私政策</a
+        >
+        <a href="terms.html" style="color: #666; text-decoration: none"
+        >用户协议</a
+        >
+    </p>
+    <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.8">
+        让每一天的穿搭都充满惊喜 🍊🍋✨
+    </p>
+</footer>
+
+<!-- 配置文件 -->
+<script src="links-config.js"></script>
+<!-- JavaScript功能文件 -->
+<script src="js/main.js"></script>
+<script src="index.js"></script>
+
+<!-- ===== 页面主体内容结束 ===== -->
+</body>
+</html>
