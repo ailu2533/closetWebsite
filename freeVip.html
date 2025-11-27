@@ -70,13 +70,19 @@
         .base-requirements li::before { content:"✓"; position:absolute; left:0; color:#667eea; font-weight:600; }
 
         .vip-tiers { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:18px 0 8px; }
-        .vip-tier-card { background:#fff; border-radius:10px; padding:14px 12px; box-shadow:0 1px 6px rgba(0,0,0,.06); text-align:center; }
-        .vip-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.65rem; font-weight:600; margin-bottom:6px; }
-        .vip-tier-card.bronze .vip-badge { background:#cd7f32; color:#fff; }
-        .vip-tier-card.silver .vip-badge { background:#c0c0c0; color:#333; }
-        .vip-tier-card.gold .vip-badge { background:#ffd700; color:#fff; }
-        .vip-tier-card h3 { font-size:1.25rem; margin:4px 0 2px; color:#333; }
-        .vip-tier-card p { margin:2px 0 0; font-size:0.8rem; color:#555; line-height:1.4; }
+        .vip-tier-card { background:#fff; border-radius:10px; padding:12px 10px; box-shadow:0 1px 6px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:4px; }
+        .vip-row { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+        .vip-label { font-size:0.78rem; font-weight:600; white-space:nowrap; }
+        .vip-need { font-size:0.72rem; color:#555; text-align:right; flex:1; }
+        .vip-tier-card.bronze .vip-label { color:#cd7f32; }
+        .vip-tier-card.silver .vip-label { color:#707070; }
+        .vip-tier-card.gold .vip-label { color:#b48c00; }
+        .vip-tier-card .emoji { font-size:0.85rem; margin-right:4px; }
+        @media (max-width:480px){
+            .vip-row { flex-wrap:wrap; }
+            .vip-label, .vip-need { width:100%; text-align:left; }
+            .vip-need { margin-top:2px; }
+        }
 
         .sample-copy-section { background:#f8f9fa; padding:20px 16px; border-radius:10px; margin:26px 0 18px; }
         .copy-tips-guide { background:linear-gradient(135deg,#f5f7fa,#e8eef7); padding:20px 16px; border-radius:10px; margin:0; }
@@ -144,22 +150,14 @@
     </div>
 
     <div class="vip-tiers">
-        <!-- 月会员 -->
         <div class="vip-tier-card bronze">
-            <span class="vip-badge">月会员</span>
-            <p>阅读量超过600</p>
+            <div class="vip-row"><span class="vip-label"><span class="emoji">🥉</span>月会员</span><span class="vip-need">阅读量超过600</span></div>
         </div>
-
-        <!-- 年会员 -->
         <div class="vip-tier-card silver">
-            <span class="vip-badge">年会员</span>
-            <p>阅读量超过1000</p>
+            <div class="vip-row"><span class="vip-label"><span class="emoji">🥈</span>年会员</span><span class="vip-need">阅读量超过1000</span></div>
         </div>
-
-        <!-- 永久会员 -->
         <div class="vip-tier-card gold">
-            <span class="vip-badge">永久会员</span>
-            <p>阅读量超2000</p>
+            <div class="vip-row"><span class="vip-label"><span class="emoji">🥇</span>永久会员</span><span class="vip-need">阅读量超过2000</span></div>
         </div>
     </div>
 
