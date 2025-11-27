@@ -71,7 +71,11 @@
 
         /* VStack 风格：垂直堆叠 */
         .vip-tiers { display:flex; flex-direction:column; gap:10px; margin:18px 0 8px; }
-        .vip-tier-card { background:#fff; border-radius:10px; padding:12px 12px; box-shadow:0 1px 6px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:4px; width:100%; }
+        .vip-tier-card { background:#fff; border-radius:10px; padding:12px 12px; box-shadow:0 1px 6px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:4px; width:100%; position:relative; }
+        /* Divider: show line above every card except the first */
+        .vip-tier-card + .vip-tier-card { margin-top:4px; }
+        .vip-tier-card + .vip-tier-card::before { content:""; position:absolute; top:0; left:8px; right:8px; height:1px; background:linear-gradient(90deg,rgba(0,0,0,0.06),rgba(0,0,0,0.18),rgba(0,0,0,0.06)); }
+        @media (max-width:480px){ .vip-tier-card + .vip-tier-card::before { left:4px; right:4px; } }
         .vip-row { display:flex; justify-content:space-between; align-items:center; gap:8px; }
         .vip-label { font-size:0.78rem; font-weight:600; white-space:nowrap; }
         .vip-need { font-size:0.72rem; color:#555; text-align:right; flex:1; }
@@ -90,7 +94,7 @@
         .guide-intro { font-size:0.85rem; margin:8px 0 16px; color:#555; line-height:1.5; }
         .tips-category { background:#fff; padding:14px 12px; border-radius:8px; margin-bottom:14px; border-left:4px solid #667eea; }
         .tips-category h3 { margin:0 0 4px; font-size:0.95rem; color:#333; }
-        .category-desc { margin:0 0 8px; font-size:0.75rem; color:#666; font-style:italic; }
+        .category-desc { margin:0 0 8px; font-size:0.75rem; color:#666; }
         .tips-category ul { list-style:none; padding:0; margin:0; }
         .tips-category li { position:relative; padding:4px 0 4px 18px; font-size:0.78rem; line-height:1.45; color:#555; }
         .tips-category li::before { content:"→"; position:absolute; left:0; color:#667eea; font-weight:600; }
