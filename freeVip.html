@@ -69,8 +69,9 @@
         .base-requirements li { position:relative; padding:4px 0 4px 20px; font-size:0.8rem; line-height:1.45; color:#555; }
         .base-requirements li::before { content:"✓"; position:absolute; left:0; color:#667eea; font-weight:600; }
 
-        .vip-tiers { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin:18px 0 8px; }
-        .vip-tier-card { background:#fff; border-radius:10px; padding:12px 10px; box-shadow:0 1px 6px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:4px; }
+        /* VStack 风格：垂直堆叠 */
+        .vip-tiers { display:flex; flex-direction:column; gap:10px; margin:18px 0 8px; }
+        .vip-tier-card { background:#fff; border-radius:10px; padding:12px 12px; box-shadow:0 1px 6px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:4px; width:100%; }
         .vip-row { display:flex; justify-content:space-between; align-items:center; gap:8px; }
         .vip-label { font-size:0.78rem; font-weight:600; white-space:nowrap; }
         .vip-need { font-size:0.72rem; color:#555; text-align:right; flex:1; }
@@ -97,7 +98,7 @@
         /* 平板 */
         @media (max-width:768px){
             .section-title{ font-size:1.5rem; margin:34px 0 18px; }
-            .vip-tiers{ grid-template-columns:1fr 1fr; }
+            .vip-tiers{ gap:12px; }
         }
         /* 手机 */
         @media (max-width:480px){
@@ -109,7 +110,7 @@
             .base-requirements{ padding:12px 12px 10px; margin:16px 0 12px; }
             .base-requirements h4{ font-size:0.85rem; margin-bottom:6px; }
             .base-requirements li{ font-size:0.72rem; padding:3px 0 3px 18px; }
-            .vip-tiers{ grid-template-columns:1fr; gap:12px; margin:14px 0 6px; }
+            .vip-tiers{ gap:10px; margin:14px 0 6px; }
             .vip-tier-card{ padding:12px 10px; }
             .vip-badge{ font-size:0.6rem; padding:2px 6px; margin-bottom:4px; }
             .vip-tier-card h3{ font-size:1.1rem; margin:2px 0; }
